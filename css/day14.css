@@ -1,7 +1,7 @@
 html {
     /* Apply an image to the entire background */
     background-color: gray;
-    background: url(/images/hangingrice.jpg) no-repeat bottom right fixed;
+    background: url(../images/hangingrice.jpg) no-repeat bottom right fixed;
     background-size: cover;
     
     /* Add vendor specific prefixes for wider support */

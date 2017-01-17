@@ -1,7 +1,7 @@
 html {
     /* Apply an image to the entire background */
     background-color: gray;
-    background: url(/images/house.jpg) no-repeat center left fixed;
+    background: url(../images/house.jpg) no-repeat center left fixed;
     background-size: cover;
     
     /* Add vendor specific prefixes for wider support */
