@@ -1,35 +1,52 @@
-(function (window, document) {
+$(document).ready(function () {
 
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
+  var layout   = document.getElementById('layout'),
+  menu     = document.getElementById('menu'),
+  hamburgerLink = document.getElementById('hamburgerLink');
 
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
+  function toggleClass(element, className) {
+    var classes = element.className.split(/\s+/),
+    length = classes.length,
+    i = 0;
 
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
+    for(; i < length; i++) {
+      if (classes[i] === className) {
+        classes.splice(i, 1);
+        break;
+      }
     }
 
-    menuLink.onclick = function (e) {
-        var active = 'active';
+    // The className is not found
+    if (length === classes.length) {
+      classes.push(className);
+    }
 
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
+    element.className = classes.join(' ');
+  }
 
-}(this, this.document));
+  hamburgerLink.onclick = function (e) {
+    var active = 'active';
+
+    e.preventDefault();
+    toggleClass(layout, active);
+    toggleClass(menu, active);
+    toggleClass(menuLink, active);
+  };
+
+  addChaptersMenuListener();
+
+});
+
+function addChaptersMenuListener() {
+  $('#chaptersMenuLink').on("click", function(e) {
+    var chapters = $("#chaptersMenu");
+    var activeClassName = "pure-menu-active";
+
+    if(chapters.hasClass(activeClassName)) {
+      chapters.removeClass(activeClassName);
+    }
+    else {
+      chapters.addClass(activeClassName);
+    }
+  });
+};
