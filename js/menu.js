@@ -30,7 +30,7 @@ $(document).ready(function () {
     e.preventDefault();
     toggleClass(layout, active);
     toggleClass(menu, active);
-    toggleClass(menuLink, active);
+    toggleClass(hamburgerLink, active);
   };
 
   addChaptersMenuListener();
